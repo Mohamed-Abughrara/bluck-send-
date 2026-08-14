@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BulkSend - Campaign Status</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b05e3d",
+                        "background": "#f7f9fb",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#3d4947",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#565e74",
+                        "outline-variant": "#bcc9c6",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbce",
+                        "surface-container": "#eceef0",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#6bd8cb",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#f4fffc",
+                        "secondary-container": "#dae2fd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#924628",
+                        "on-primary-fixed": "#00201d",
+                        "surface-dim": "#d8dadc",
+                        "surface-tint": "#006a61",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "primary-fixed": "#89f5e7",
+                        "on-background": "#191c1e",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed": "#370e00",
+                        "primary": "#00685f",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-container": "#008378",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-fixed-variant": "#005049",
+                        "outline": "#6d7a77",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#773215"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "xs": "0.5rem",
+                        "base": "4px",
+                        "margin-desktop": "2.5rem",
+                        "lg": "2rem",
+                        "gutter": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "sm": "1rem",
+                        "md": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased h-screen flex">
+<!-- SideNavBar -->
+<aside class="w-60 h-screen fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant shadow-sm flex flex-col h-full py-6 z-50 hidden md:flex">
+<!-- Header -->
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm font-bold">B</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">BulkSend</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Marketing Workspace</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-r-full group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-secondary-container text-on-secondary-container border-l-2 border-primary rounded-r-full transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="campaign" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="font-body-md text-body-md font-bold text-primary">Campaigns</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-r-full group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="group">group</span>
+<span class="font-body-md text-body-md">Recipients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-r-full group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<!-- CTA -->
+<div class="px-6 mt-auto">
+<button class="w-full py-2 px-4 bg-[#0D9488] text-white rounded-lg font-label-md text-label-md hover:bg-[#0D9488]/90 transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Campaign
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-[240px] flex flex-col min-h-screen">
+<!-- TopNavBar (Optional/Semantic representation here for structure, though JSON specified it) -->
+<header class="h-16 bg-surface-container-lowest border-b border-outline-variant shadow-sm flex items-center justify-between px-margin-desktop sticky top-0 z-40 hidden md:flex">
+<div class="flex items-center gap-4">
+<!-- Breadcrumb/Title Area -->
+<span class="font-body-md text-on-surface-variant">Campaigns</span>
+<span class="material-symbols-outlined text-outline text-sm">chevron_right</span>
+<span class="font-label-md text-primary font-bold">Product Update - Oct</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-md ml-2 border border-outline-variant">
+                     U
+                 </div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="flex-1 p-margin-mobile md:p-margin-desktop overflow-y-auto w-full max-w-[1200px] mx-auto">
+<!-- Header Section -->
+<div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Product Update - Oct</h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        Started on Oct 24, 2023 at 10:00 AM
+                    </p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-[#E2E8F0] text-[#0F172A] bg-white rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors shadow-sm">
+                        Pause
+                    </button>
+<button class="px-4 py-2 border border-[#E2E8F0] text-[#0F172A] bg-white rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export
+                    </button>
+</div>
+</div>
+<!-- Progress Section (Bento-style card) -->
+<div class="bg-surface-container-lowest rounded-[24px] p-6 mb-lg border border-[#F1F5F9] shadow-[0_4px_12px_rgba(0,0,0,0.02)] transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Sending Progress</h3>
+<span class="font-headline-md text-headline-md text-primary">85%</span>
+</div>
+<div class="w-full bg-surface-container-high h-4 rounded-full overflow-hidden mb-6">
+<div class="bg-[#0D9488] h-full rounded-full transition-all duration-1000 ease-out w-[85%] relative overflow-hidden">
+<!-- Shimmer effect -->
+<div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4 border-t border-outline-variant/30">
+<div>
+<p class="font-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Total Recipients</p>
+<p class="font-headline-sm text-on-surface">12,500</p>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant mb-1 uppercase tracking-wider flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span> Sent
+                        </p>
+<p class="font-headline-sm text-on-surface">10,625</p>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant mb-1 uppercase tracking-wider flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#94A3B8]"></span> Queued
+                        </p>
+<p class="font-headline-sm text-on-surface">1,850</p>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant mb-1 uppercase tracking-wider flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#EF4444]"></span> Failed
+                        </p>
+<p class="font-headline-sm text-error">25</p>
+</div>
+</div>
+</div>
+<!-- Recipient List Section -->
+<div class="bg-surface-container-lowest rounded-[24px] border border-[#F1F5F9] shadow-[0_4px_12px_rgba(0,0,0,0.02)] overflow-hidden">
+<div class="p-6 border-b border-[#F1F5F9] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recipient Status</h3>
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8] text-[18px]">search</span>
+<input class="w-full h-[40px] pl-10 pr-4 rounded-lg border border-[#E2E8F0] focus:border-[#0D9488] focus:ring-2 focus:ring-[#0D9488]/10 outline-none font-body-md bg-transparent placeholder:text-[#94A3B8] transition-all" placeholder="Search emails..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="py-3 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider border-b border-[#F1F5F9]">Recipient Name</th>
+<th class="py-3 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider border-b border-[#F1F5F9]">Email Address</th>
+<th class="py-3 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider border-b border-[#F1F5F9]">Status</th>
+<th class="py-3 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider border-b border-[#F1F5F9]">Timestamp</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface">
+<tr class="hover:bg-surface-container-lowest/80 transition-colors border-b border-[#F1F5F9] last:border-0">
+<td class="py-4 px-6">Sarah Jenkins</td>
+<td class="py-4 px-6 text-on-surface-variant">sarah.j@example.com</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#10B981]/10 text-[#047857] font-label-md text-[11px] uppercase tracking-wide font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                                        Sent
+                                    </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">10:45:12 AM</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/80 transition-colors border-b border-[#F1F5F9] last:border-0">
+<td class="py-4 px-6">Michael Chen</td>
+<td class="py-4 px-6 text-on-surface-variant">m.chen@techcorp.io</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#10B981]/10 text-[#047857] font-label-md text-[11px] uppercase tracking-wide font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                                        Sent
+                                    </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">10:45:11 AM</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/80 transition-colors border-b border-[#F1F5F9] last:border-0 bg-surface-container-lowest">
+<td class="py-4 px-6">Elena Rodriguez</td>
+<td class="py-4 px-6 text-on-surface-variant">elena.r@designstudio.co</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F1F5F9] text-[#475569] font-label-md text-[11px] uppercase tracking-wide font-bold">
+<span class="material-symbols-outlined text-[12px] animate-spin">sync</span>
+                                        Queued
+                                    </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">-</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/80 transition-colors border-b border-[#F1F5F9] last:border-0">
+<td class="py-4 px-6">David Kim</td>
+<td class="py-4 px-6 text-on-surface-variant">dkim@startup.net</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#EF4444]/10 text-[#B91C1C] font-label-md text-[11px] uppercase tracking-wide font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#EF4444]"></span>
+                                        Failed
+                                    </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant text-error text-sm">Bounce: Mailbox Full</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/80 transition-colors border-b border-[#F1F5F9] last:border-0 bg-surface-container-lowest">
+<td class="py-4 px-6">Amanda Foster</td>
+<td class="py-4 px-6 text-on-surface-variant">afoster@global.org</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F1F5F9] text-[#475569] font-label-md text-[11px] uppercase tracking-wide font-bold">
+<span class="material-symbols-outlined text-[12px] animate-spin">sync</span>
+                                        Queued
+                                    </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-[#F1F5F9] flex items-center justify-between text-on-surface-variant font-label-md">
+<span>Showing 1-5 of 12,500</span>
+<div class="flex gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body></html>

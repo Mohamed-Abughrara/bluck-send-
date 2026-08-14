@@ -1,0 +1,25 @@
+{
+  "users": [],
+  "recipients": [],
+  "campaigns": [],
+  "sends": [],
+  "settings": [
+    {
+      "id": "003709e7-e3c3-438f-902c-09f32bfb10c3",
+      "created_at": "2026-08-14T21:48:38.635Z",
+      "updated_at": "2026-08-14T21:54:37.331Z",
+      "user_id": "demo-user-id",
+      "sender_name": "Mohamed Ali",
+      "sender_email": "mohamed@mydomain.com",
+      "sender_identity": {
+        "reply_to": "support@mydomain.com",
+        "signature": "Regards,\nMohamed Ali\nCEO, MyDomain"
+      },
+      "connected_account": {
+        "email": "sabughrara@gmail.com",
+        "provider": "Google",
+        "status": "connected"
+      }
+    }
+  ]
+}

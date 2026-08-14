@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BulkSend - Send Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b05e3d",
+                        "background": "#f7f9fb",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#3d4947",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#565e74",
+                        "outline-variant": "#bcc9c6",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbce",
+                        "surface-container": "#eceef0",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#6bd8cb",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#f4fffc",
+                        "secondary-container": "#dae2fd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#924628",
+                        "on-primary-fixed": "#00201d",
+                        "surface-dim": "#d8dadc",
+                        "surface-tint": "#006a61",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "primary-fixed": "#89f5e7",
+                        "on-background": "#191c1e",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed": "#370e00",
+                        "primary": "#00685f",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-container": "#008378",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-fixed-variant": "#005049",
+                        "outline": "#6d7a77",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#773215"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "xs": "0.5rem",
+                        "base": "4px",
+                        "margin-desktop": "2.5rem",
+                        "lg": "2rem",
+                        "gutter": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "sm": "1rem",
+                        "md": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background antialiased h-screen w-screen overflow-hidden flex relative">
+<!-- Background Compose Screen Mockup -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-50 flex">
+<!-- Sidebar Mock -->
+<div class="w-60 h-screen bg-surface-container-lowest border-r border-outline-variant p-6 flex flex-col gap-6">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">BulkSend</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-4 py-2 text-on-surface-variant rounded-md bg-surface-container-high"><span class="material-symbols-outlined">edit</span> Compose</div>
+<div class="flex items-center gap-3 px-4 py-2 text-on-surface-variant"><span class="material-symbols-outlined">dashboard</span> Dashboard</div>
+</div>
+</div>
+<!-- Main Content Mock -->
+<div class="flex-1 p-8 flex flex-col gap-6">
+<div class="h-12 w-1/3 bg-surface-variant rounded-md"></div>
+<div class="h-64 w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-4"></div>
+<div class="h-10 w-32 bg-primary rounded-md self-end"></div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div class="absolute inset-0 z-50 flex items-center justify-center bg-on-background/40 backdrop-blur-md px-margin-mobile">
+<!-- Modal Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant shadow-[0_12px_24px_-4px_rgba(0,0,0,0.05)] w-full max-w-md p-6 flex flex-col gap-6 transform transition-all">
+<!-- Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-background">Send Campaign?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Confirm final details before dispatch.</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-background transition-colors focus:outline-none">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Body -->
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/30 flex flex-col gap-4">
+<div class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">group</span>
+<div>
+<p class="font-body-md text-body-md">You are about to send this email to <strong class="text-on-background font-semibold">1,240 recipients</strong>.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<div>
+<p class="font-body-md text-body-md">Estimated send time: <strong class="text-on-background font-semibold">4 minutes</strong>.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-error">warning</span>
+<div>
+<p class="font-label-md text-label-md text-error">This action cannot be undone once initiated.</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md border border-outline-variant text-on-background bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+                    Cancel
+                </button>
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md text-on-primary bg-[#0D9488] hover:bg-[#0f766e] transition-colors shadow-sm flex items-center gap-2">
+<span>Confirm Send</span>
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

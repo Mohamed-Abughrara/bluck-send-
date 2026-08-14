@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BulkSend Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b05e3d",
+                        "background": "#f7f9fb",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#3d4947",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#565e74",
+                        "outline-variant": "#bcc9c6",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbce",
+                        "surface-container": "#eceef0",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#6bd8cb",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#f4fffc",
+                        "secondary-container": "#dae2fd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#924628",
+                        "on-primary-fixed": "#00201d",
+                        "surface-dim": "#d8dadc",
+                        "surface-tint": "#006a61",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "primary-fixed": "#89f5e7",
+                        "on-background": "#191c1e",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed": "#370e00",
+                        "primary": "#00685f",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-container": "#008378",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-fixed-variant": "#005049",
+                        "outline": "#6d7a77",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#773215"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "xs": "0.5rem",
+                        "base": "4px",
+                        "margin-desktop": "2.5rem",
+                        "lg": "2rem",
+                        "gutter": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "sm": "1rem",
+                        "md": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f7f9fb; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg flex min-h-screen">
+<!-- SideNavBar -->
+<nav class="w-60 h-screen fixed left-0 top-0 border-r border-outline-variant shadow-sm bg-surface-container-lowest flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex flex-col gap-1">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">BulkSend</h1>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Marketing Workspace</p>
+</div>
+<div class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 bg-secondary-container text-on-secondary-container border-l-2 border-primary rounded-r-full" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="campaign">campaign</span>
+<span class="font-body-md text-body-md font-semibold">Campaigns</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span class="font-body-md text-body-md">Recipients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full bg-[#0D9488] hover:bg-[#0b7e73] text-white font-label-md text-label-md py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Campaign
+            </button>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="ml-60 flex-1 flex flex-col min-h-screen bg-background">
+<!-- TopNavBar -->
+<header class="h-16 fixed top-0 right-0 z-40 bg-surface-container-lowest border-b border-outline-variant shadow-sm flex items-center justify-between px-margin-desktop w-[calc(100%-240px)]">
+<h2 class="font-headline-md text-headline-md text-on-background">Campaigns</h2>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a young marketing executive smiling warmly. The photo has a bright, clean, light-mode aesthetic with soft studio lighting against a minimal white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2fLay-yrcaP-2PfQ2JPkwWUQW8xYr5QaHBDWugMrRiNq2Z98-Xa4nRog99oa5SBbfacq1d7rubSa9VYY1FSlD0MnvLLIazMT_HeWiDhWRbGNxL4O0eGVzd2G1lV3ctrd-m-VscFGz9z9pgs-fA-xi-RKLWqwD3YorDPeN3RiOwaJlOxho2NgI1IjEWCPaA4lTyKkodPLFGiY_1UkOOxxFsFU9aiXJpHEiQmVibMJPJcSKPYV2Vi_1"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 mt-16 p-margin-desktop max-w-[1200px] w-full mx-auto">
+<!-- Actions Row -->
+<div class="flex justify-between items-center mb-8">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-10 pl-10 pr-4 border border-outline-variant rounded-lg font-body-md text-body-md focus:border-[#0D9488] focus:ring-2 focus:ring-[#0D9488]/10 bg-surface-container-lowest placeholder:text-[#94A3B8] outline-none" placeholder="Search campaigns..." type="text"/>
+</div>
+<div class="flex gap-3">
+<button class="h-10 px-4 bg-surface-container-lowest border border-outline-variant text-on-background font-label-md text-label-md rounded-lg hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+</div>
+</div>
+<!-- Table Card -->
+<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant shadow-[0_4px_12px_rgba(0,0,0,0.02)] overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-lowest">
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Subject</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Recipients</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Date Sent</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant bg-surface-container-lowest">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="font-body-md text-body-md font-bold text-on-background">Q3 Product Update &amp; Feature Release</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-1">ID: CAM-9201</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-background">12,450</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#dcfce7] text-[#166534] font-label-md text-label-md uppercase">Sent</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">Oct 12, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md transition-colors opacity-0 group-hover:opacity-100">View Report</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="font-body-md text-body-md font-bold text-on-background">Holiday Promotional Offer - Segment A</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-1">ID: CAM-9202</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-background">--</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md uppercase">Draft</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">--</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md transition-colors opacity-0 group-hover:opacity-100">Edit Draft</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="font-body-md text-body-md font-bold text-on-background">Weekly Newsletter - Issue #45</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-1">ID: CAM-9199</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-background">8,120</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#dcfce7] text-[#166534] font-label-md text-label-md uppercase">Sent</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">Oct 05, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md transition-colors opacity-0 group-hover:opacity-100">View Report</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="font-body-md text-body-md font-bold text-on-background">System Maintenance Notification</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-1">ID: CAM-9198</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-background">24,000</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#dcfce7] text-[#166534] font-label-md text-label-md uppercase">Sent</span>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">Oct 01, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md transition-colors opacity-0 group-hover:opacity-100">View Report</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-on-surface-variant">Showing 1 to 4 of 48 campaigns</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
